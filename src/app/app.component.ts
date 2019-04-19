@@ -9,12 +9,10 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
 flag:boolean= true;
-commentDiv=false;
-comments=[];
+
 	mArticles: Array<any>;
 	mSources: Array<any>;
 
-	like = 12;
 	currentLike;
 	constructor(private newsapi: NewsApiService) {
 		console.log('app component constructor called');
@@ -28,21 +26,15 @@ comments=[];
 	// 	},2000);
 	//  }
 	
-	commentFun(flag,i){
-		if(flag === true){
-			this.commentDiv = false;
+	commentFun(i){
+		console.log(i);
+		
+		if(this.mArticles[i].commentDiv == true){
+			this.mArticles[i].commentDiv = false;
 		}
 		else{
-			this.commentDiv = true;
+			this.mArticles[i].commentDiv = true;
 		}
-	}
-
-	commentSaved(e){
-		 console.log(e.target.value);
-
-		this.comments.push(e.target.value);
-		e.target.value= "";
-		
 	}
 
 	plus(i) {
@@ -57,31 +49,23 @@ comments=[];
 		}
 	}
 
+	commentSaved(e,i){
+		console.log(e.target.value);
+
+	   this.mArticles[i].comments.push(e.target.value);
+	   e.target.value= "";
+   }
 
 	ngOnInit() {
-		//load articles
-		
+
 		this.loadAticles();
-	
-
-
-
-
-		//load news sources
-		// console.log(this.mArticles);
-
 		this.newsapi.initSources().subscribe(data => this.mSources = data['sources']);
-
-
-
-		// this.getRandom();
+	
 	}
 	loadAticles() {
 		this.newsapi.initArticles().subscribe(data => {
 		this.mArticles = data['articles'];
-		//  console.log(this.mArticles);
-			// console.log("data" + data);
-
+		
 			if (data)
 				this.likeKey();
 		});
@@ -90,24 +74,40 @@ comments=[];
 
 
 	likeKey() {
-
 		this.mArticles.forEach((i) => {
 			i['like'] = 0;
 			i['flag'] = false;
+			i['commentDiv'] = 'false';
+			i['comments'] = [];
 			console.log(this.mArticles);
-
 		}
 		);
 	}
 
-
-
-
 	searchArticles(source) {
-		// console.log("selected source is: "+source);
-
-		this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
+	
+		this.newsapi.getArticlesByID(source).subscribe(data => {
+			
+			this.mArticles = data['articles'];
+			if(data){
+				this.likeKey();
+			}
+			
+		});
 	}
+
+	about(){
+	
+		window.open('https://github.com/kamgirgit', '_blank')
+	}
+
+	// search(value:String){
+	// this.mArticles.forEach(function(article){
+	// 	if(article.content.toLowerCase().indexOf(value.toLowerCase()) != -1){
+	// 		console.log(article);
+	// 	}
+	// })
+	// }
 
 
 }

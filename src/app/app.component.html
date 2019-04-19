@@ -3,14 +3,35 @@
   <button mat-button (click)="sidenav.open()" ><mat-icon>menu</mat-icon></button>
   <span>News Headlines</span>  
   <span class="example-spacer"></span>
+
+
+  <mat-form-field class="myinput example-form-field">
+    <input matInput type="text" placeholder="Search For News" (keyup)="search(value)" [(ngModel)]="value">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
   
-  <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon >settings</mat-icon></button>
+  <!-- <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon >settings</mat-icon></button> -->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
   
 </mat-toolbar>
 
-<mat-menu #appMenu="matMenu">
+<!-- <mat-menu #appMenu="matMenu">
   <button mat-menu-item> Settings </button>
   <button mat-menu-item> Help </button>
+</mat-menu> -->
+<mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="about()">
+        <mat-icon>account_box</mat-icon>
+        <span>About Me</span>
+      </button>
+      
+      
 </mat-menu>
 
 
@@ -38,8 +59,9 @@
     </mat-card-header>
     <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
       <mat-card-content>
-        <p>
-          {{article.description}}
+          <p style="padding:2px 5px; color:#10628a;"> {{article.description}}</p>
+        <p style="padding:0px 5px;">
+          {{article.content}}
         </p>
       </mat-card-content>
 
@@ -49,21 +71,21 @@
        <div id="img-hold" *ngIf="this.mArticles[i].like == 1"> <img src="https://thumbs.gfycat.com/DescriptiveHotFairyfly-max-1mb.gif" /> </div>
         {{article.like}} <span class="liketext">Likes </span> </button>
         
-      <button class="actionbtn" mat-button color="accent" (click)="commentFun(commentDiv)"><mat-icon>comment</mat-icon> <span class="commenttext">Comments</span></button>
+      <button class="actionbtn" mat-button color="accent" (click)="commentFun(i)"><mat-icon>comment</mat-icon> <span class="commenttext">Comments</span></button>
       <!-- <button mat-button color="primary"><mat-icon>share</mat-icon> Share</button> -->
       <a class="actionbtn" mat-button color="primary" href="https://api.whatsapp.com/send?phone=917532006295&text={{article.url}}" target="_blank"><mat-icon>share</mat-icon> <span class="sharetext">Share</span> </a>
       <a class="actionbtn" mat-button color="warn" href={{article.url}} target="_blank" ><mat-icon>visibility</mat-icon> <span class="viewtext">View</span> </a>
     </mat-card-actions>
     
-    <div *ngIf="commentDiv"> 
+    <div *ngIf="this.mArticles[i].commentDiv === true">
       <p>Todays Comment :</p>
         <ul class="dul" >
-            <li class="dlink" [ngStyle]="{'color':'#174b65'}" *ngFor="let comment of comments; let i = index"> <i class="material-icons myarrow"> arrow_right_alt</i> {{comment}}</li>
+            <li class="dlink" [ngStyle]="{'color':'#174b65'}" *ngFor="let comment of this.mArticles[i].comments; let ind = index"> <i class="material-icons myarrow"> arrow_right_alt</i> {{comment}}</li>
           </ul>
 
         <mat-form-field class="example-full-width">
           
-            <textarea (blur)="this.commentDiv = false;"  (keydown.enter)="commentSaved($event)" matInput placeholder="Leave a comment"></textarea>
+            <textarea (blur)="this.mArticles[i].commentDiv = false;"(keydown.enter)="commentSaved($event,i)" matInput placeholder="Leave a comment"></textarea>
           </mat-form-field>
     </div>
   </mat-card>

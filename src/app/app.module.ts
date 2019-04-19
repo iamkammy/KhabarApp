@@ -34,6 +34,7 @@ import {MatInputModule} from '@angular/material/input';
     MatSnackBarModule,
     FormsModule,
     MatInputModule,
+   
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [NewsApiService],

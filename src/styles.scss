@@ -24,16 +24,29 @@ body {
     body{
        padding: 0em 0em !important;
    }
+   .mat-drawer-content {
+    margin-top: 54px;
+}
    
 }
+
 @media only screen and(max-width: 1800px){
     body{
         padding: 0em 0em !important;
     }
+    .mat-drawer-content {
+        margin-top: 68px;
+   }
     .example-card{
         width: 100%;
         margin: 3px auto;
     }
+    .example-full-width{
+        width: 90%;
+      }
+     
+    
+    
 }
 
 @media screen and (max-width: 960px){
@@ -52,6 +65,14 @@ body {
    .example-full-width{
     width: 90%;
   }
+  .example-card{
+    width: auto;
+    margin: 1px auto;
+}
+
+  .mat-drawer-content {
+    margin-top: 54px;
+}
   .liketext{
     display: none;
 }
@@ -72,9 +93,13 @@ body {
         padding: 0em 0em !important;
     }
     .example-card{
-        // width: 100%;
-        // margin: 1px auto;
+        width: auto;
+        margin: 1px auto;
     }
+    .mat-drawer-content {
+        margin-top: 53px;
+   }
+   
     mat-card-actions.action-buttons.mat-card-actions {
         display: flex;
         justify-content: space-evenly;

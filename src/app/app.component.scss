@@ -30,7 +30,7 @@
     position: relative;
     flex: auto;
     min-width: 0;
-    width: 180px;
+    width: 600px;
 }
   
   .action-buttons{
@@ -75,10 +75,11 @@
   // mat tool bar styles
 
 
-//   ::ng-deep .mat-toolbar{
-//     z-index: 999;
-//     position: fixed
-//   }
+  ::ng-deep .mat-toolbar{
+    z-index: 999;
+    position: fixed
+  }
+
   
 #img-hold{
     display: inline-block;
@@ -115,4 +116,13 @@ textarea.mat-input-element {
         margin: 0 auto;
         margin-bottom: 10px;
     }
+}
+
+mat-sidenav.example-sidenav.mat-drawer.mat-sidenav.ng-tns-c6-1.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted {
+    margin-top: 40px;
+}
+.myinput{
+    font-size: 12px;
+    margin-top: 30px;
+    margin-right: 12px;
 }
