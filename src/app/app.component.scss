@@ -1,0 +1,118 @@
+
+.toolbar{
+    background-color:  #125979;
+    color: #eeeeee;
+}
+.example-spacer {
+    flex: 1 1 auto;
+   
+  }
+  .example-container{
+    
+    background-image:linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+  .example-card{
+      margin-top: 4px;
+    
+  }
+  
+  .example-header-image { 
+    background-size: cover;
+  }
+  
+  .title{
+      font-weight: bold;
+  }
+  
+  .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 180px;
+}
+  
+  .action-buttons{
+      text-align: center;
+     
+  }
+  .action-buttons button{
+    font-size: 12px;
+  }
+  
+  .example-container {
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(111, 111, 111, 0.50);
+  }
+  
+  .example-sidenav-content {
+      display: flex;
+      height: 75%;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .example-sidenav {
+      padding: 20px;
+  }
+  
+  .source-name {
+      margin-left:5px; 
+  }
+  
+  .list-item:hover{
+      cursor: pointer;
+      background-color: #3f51b5;
+      color: white;
+  }
+  
+.img-article{
+    width: 100% !important;
+    margin: 0px !important;
+}
+  // mat tool bar styles
+
+
+//   ::ng-deep .mat-toolbar{
+//     z-index: 999;
+//     position: fixed
+//   }
+  
+#img-hold{
+    display: inline-block;
+}
+#img-hold img{
+    width: 65px;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 14px;
+}
+// .example-full-width{
+//     width: 70%;
+// }
+
+textarea.mat-input-element {
+    resize: none;
+    overflow: auto;
+}
+.myarrow{
+    vertical-align: middle;
+}
+.dlink{
+    list-style: none;
+}
+.dul{
+    padding-left: 0px;
+}
+@media (min-width: 768px){
+    .example-card {
+        margin-top: 10px;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}

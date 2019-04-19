@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    padding: 2em 23em;
+    background:lightgray;
+}
+
+/*Media Queries for fixing distortion at some points*/
+
+@media screen and (max-width: 1150px){
+    body{
+       padding: 2em 11.5em !important;
+   }
+
+}
+
+/*Media Queries For Tablates*/
+
+@media screen and (max-width: 1024px){
+    body{
+       padding: 0em 0em !important;
+   }
+   
+}
+@media only screen and(max-width: 1800px){
+    body{
+        padding: 0em 0em !important;
+    }
+    .example-card{
+        width: 100%;
+        margin: 3px auto;
+    }
+}
+
+@media screen and (max-width: 960px){
+   body{
+       padding: 0em 0em !important;
+   }
+   .example-full-width{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:768px){
+  body{
+       padding: 0em 0em !important;
+   }
+   .example-full-width{
+    width: 90%;
+  }
+  .liketext{
+    display: none;
+}
+.commenttext{
+    display: none;
+}
+.sharetext{
+    display: none;
+}
+.viewtext{
+    display: none;
+}
+}
+
+/*Media Queries For Mobiles*/
+@media screen and (max-width:480px){
+    body{
+        padding: 0em 0em !important;
+    }
+    .example-card{
+        // width: 100%;
+        // margin: 1px auto;
+    }
+    mat-card-actions.action-buttons.mat-card-actions {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .example-full-width{
+        width: 100%;
+    }
+    .mat-card-actions .mat-button {
+        margin: 0 0px !important;
+        padding: 0 8px;
+        line-height: 5;
+    }
+    .mat-button, .mat-flat-button{
+        min-width: 20px !important;
+        padding: 0 3px;
+    }
+    .liketext{
+        display: none;
+    }
+    .commenttext{
+        display: none;
+    }
+    .sharetext{
+        display: none;
+    }
+    .viewtext{
+        display: none;
+    }
+
+}
+  
+
+  body{
+       padding: 0em 0em !important;
+   }
