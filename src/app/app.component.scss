@@ -126,3 +126,26 @@ mat-sidenav.example-sidenav.mat-drawer.mat-sidenav.ng-tns-c6-1.ng-trigger.ng-tri
     margin-top: 30px;
     margin-right: 12px;
 }
+
+mat-sidenav.example-sidenav.mat-drawer.mat-sidenav.ng-tns-c6-1.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted {
+    transform: none;
+    visibility: visible;
+    position: fixed;
+    overflow: auto;
+    bottom: 0px;
+    height: auto;
+}
+.mat-drawer-inner-container::-webkit-scrollbar{
+    width:1em;
+    color: #1fc8db;
+    background: #125979;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   
+}
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    
+  }

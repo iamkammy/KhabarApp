@@ -9,8 +9,44 @@ body {
     background:lightgray;
 }
 
-/*Media Queries for fixing distortion at some points*/
+// scroll css for inside slider
+.mat-drawer-inner-container::-webkit-scrollbar{
+    width:5px;
+    color: #1fc8db;
+    background: darkgrey;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+    border-radius: 5px; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
 
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    background-color: #125979;
+    border-radius: 5px;
+    outline: 1px solid slategrey;
+  }
+
+// scroll css for whole body
+body::-webkit-scrollbar {
+    width: 10px;
+   
+    background-color: #020101;
+
+}
+ 
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fd0459;
+  outline: 1px solid slategrey;
+}
+
+
+/*Media Queries for fixing distortion at some points*/
 @media screen and (max-width: 1150px){
     body{
        padding: 2em 11.5em !important;
